@@ -1,29 +1,17 @@
 #include <stdio.h>
-
-int main() { 
- #include <stdio.h>
-
-int main(){
-    int size;
-    printf("Saiser  le nombre delements dun tableau : ");
-    scanf("%d",&size);
-
-    int tableau[size];
-
-    for(int i=0;i<size ;i++){
-        printf("Saiser  %i elements du tableau : " ,i+1);
-        scanf("%d",&tableau[i]);
-     
-       
+    
+    int main() {
+        int nombre; 
+    
+        printf("Saiser un nomber : "); 
+        scanf("%d", &nombre);
+        int inverse = 0; 
+        while (nombre > 0) { 
+            inverse = inverse * 10 + nombre % 10; 
+            nombre /=  10;
+    
+        }
+        printf("%d",inverse);
+            
+        return 0;
     }
-    for(int i=0;i<size ;i++){
-       
-     
-        printf("valure %d : %d \n", i+1, tableau[i]);
-    }
-   
-
-    return 0;
-}
-    return 0; 
-} 
