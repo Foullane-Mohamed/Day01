@@ -1,31 +1,3 @@
-// #include <stdio.h>
-
-// int main() { 
-//     int entier_n ; 
- 
-//     printf("Saiser un  entier n : "); 
-//     scanf("%d", &entier_n); 
- 
-//     for(int i=2; i<=entier_n; i++) { 
-//         int nombre_premier = 1;
- 
-//         for(int j=2; j<i; j++) { 
-//             if(i % j == 0) { 
-
-//                 nombre_premier = 0; 
-//                 break; 
-//             } 
-//         } 
-
-//         if(nombre_premier == 1) { 
-//             printf("%d ", i); 
-//         } 
-//     } 
- 
-//     return 0; 
-// } 
-
-
 #include <stdio.h>
 int main(){
     int nombre;
@@ -37,10 +9,12 @@ int main(){
         for(int j =2; j<i ; j++){
             if(i % j == 0){
                 test = 0;
-                breakl;
+                break ;
             }
         }
-        printf("%d \n",i);
+        if(test == 1){
+            printf("%d \n",i);
+        }
     }
 
     return 0;
