@@ -1,7 +1,6 @@
 #include <stdio.h>
-int somme(int a, int b){
-    return a+b;
-}
+int somme(int a, int b);
+
 int main() {
    int nombre1,nombre2;
     printf("Saiser le premiere nombre : ");
@@ -13,4 +12,8 @@ int main() {
     
 
     return 0;
+}
+
+int somme(int a, int b){
+    return a+b;
 }

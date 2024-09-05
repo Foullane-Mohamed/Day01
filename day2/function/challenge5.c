@@ -1,13 +1,6 @@
 #include <stdio.h>
-int factorielle(int a){
-    int somme = a;
-    for (int i = 1; i <= a; i++){
-      somme *= i;
-    }
+int factorielle(int a);
 
-    return somme;
-   
-}
 int main() {
    int nombre;
     printf("Saiser un nombre : ");
@@ -18,4 +11,13 @@ int main() {
     
 
     return 0;
+}
+int factorielle(int a){
+    int somme = a;
+    for (int i = 1; i <= a; i++){
+      somme *= i;
+    }
+
+    return somme;
+   
 }

@@ -1,8 +1,6 @@
 #include <stdio.h>
-int grand_nombre(int a, int b){
-    if(a>b) return a;
-    else if(a<b) return b ;
-}
+int grand_nombre(int a, int b);
+
 int main() {
    int nombre1,nombre2;
     printf("Saiser le premiere nombre : ");
@@ -14,4 +12,9 @@ int main() {
     
 
     return 0;
+}
+
+int grand_nombre(int a, int b){
+    if(a>b) return a;
+    else if(a<b) return b ;
 }
