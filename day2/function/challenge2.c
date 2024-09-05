@@ -1,6 +1,6 @@
 #include <stdio.h>
-int somme(int a, int b){
-    return a+b;
+int multi(int a, int b){
+    return a*b;
 }
 int main() {
    int nombre1,nombre2;
@@ -9,7 +9,7 @@ int main() {
     printf("Saiser le dexieme nombre : ");
     scanf("%d",&nombre2);
 
-    printf("la somme est : %d" , somme(nombre1,nombre2));
+    printf("la multiplication de a et b est : %d" , multi(nombre1,nombre2));
     
 
     return 0;
