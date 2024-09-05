@@ -9,11 +9,14 @@ int main() {
         printf("Saiser le %d element de tableaux : ",i+1);
         scanf("%d",&tableaux[i]);
     }
-    printf("{");
-    for (int i = size ; i > 0; i--){
-        printf(" %d ",tableaux[i-1]);
+    
+    for (int i = 0; i < size; i++){
+        if(tableaux[i]%2 == 0){
+            printf(" le nombre  %d est pair \n",tableaux[i]);
+        }
+        
     }
-    printf("}");
+    
     
 
     return 0;
