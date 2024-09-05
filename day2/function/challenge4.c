@@ -1,7 +1,7 @@
 #include <stdio.h>
-int grand_nombre(int a, int b){
-    if(a>b) return a;
-    else if(a<b) return b ;
+int petit_nombre(int a, int b){
+    if(a<b) return a;
+    else if(a>b) return b ;
 }
 int main() {
    int nombre1,nombre2;
@@ -10,7 +10,7 @@ int main() {
     printf("Saiser le dexieme nombre : ");
     scanf("%d",&nombre2);
 
-    printf("le blus grand nombre est : %d" , grand_nombre(nombre1,nombre2));
+    printf("le blus petit nombre est : %d" , petit_nombre(nombre1,nombre2));
     
 
     return 0;
