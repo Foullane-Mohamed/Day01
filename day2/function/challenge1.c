@@ -1,14 +1,17 @@
 #include <stdio.h>
-
+int somme(a,b){
+    return a+b;
+}
 int main() {
-    int nombre;
+   int nombre1,nombre2;
+    printf("Saiser le premiere nombre : ");
+    scanf("%d",&nombre1);
+    printf("Saiser le dexieme nombre : ");
+    scanf("%d",&nombre2);
 
-    printf("Saiser un nombre : ");
-    scanf("%d",&nombre);
+    printf("la somme est : %d" , somme(nombre1,nombre2););
     
-    for(int i = 10 ; i> 0 ;i--){
-        printf("%d * %d = %d \n",nombre , i , nombre * i);
-    }
 
     return 0;
 }
+
