@@ -1,15 +1,29 @@
 #include <stdio.h>
-int main(){
-    int nombre; 
-    printf("saiser un nombre : ");
-    scanf("%d",&nombre);
 
-    for (int i = 1; i <= nombre; i++)
-    {
-        if(nombre % i == 0){
-            printf("%d \n",i);
-        }
-    }
-    return 0;
+int Fibonacci(int nombre)
+{
     
+    if (nombre==0 || nombre==1)
+        return nombre;
+    else
+    return Fibonacci(nombre-1)+Fibonacci(nombre-2);
 }
+
+int main(){
+    
+    int nombre, fib;
+
+    printf("Saiser un nombre : ");
+    scanf("%d", &nombre);
+
+    if (nombre<1){
+      printf("erreur, la factorielle est negatif");
+    }
+    else {
+      fib=Fibonacci(nombre);
+      printf("Fibonacci de %d est : %d", nombre, fib);
+}
+
+    return 0;
+}
+
