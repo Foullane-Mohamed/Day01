@@ -43,14 +43,17 @@ void rechercher()
 {
   char new_titre[100];
   printf("Siser un titre de livre pour rechercher :");
-  scanf("%s", new_titre == 0);
+  scanf("%s", new_titre);
   for (int i = 0; i < count; i++)
   {
-    if (strcmp(stock[i].titre, new_titre))
+    if (strcmp(stock[i].titre, new_titre)==0)
     {
+        printf("_____________________________________________________________________\n");
       printf(" livre nombre %d  : | titre : %s | auteur : %s  | prix : %d | quantite : %d | \n", i + 1, stock[i].titre, stock[i].auteur, stock[i].prix, stock[i].quantite);
+        printf("_____________________________________________________________________\n");
     }
   }
+
 }
 int main()
 {
