@@ -71,46 +71,71 @@ void mettre_a_jour()
       scanf("%d", &stock[i].quantite);
     }
   }
-  }
-  int main()
+}
+
+void supprimer()
+{
+  char new_titre[100];
+  printf("Siser un titre de livre pour editer :");
+  scanf("%s", new_titre);
+  for (int i = 0; i < count; i++)
   {
-    printf("_____________________________________________________________________\n");
-    do
+    if (strcmp(stock[i].titre, new_titre) == 0)
     {
-      printf("Saiser un nombre : \n");
-      printf(" \n");
-      printf("1 : Ajouter un livre au stock : \n");
-      printf("2 : Afficher tous les livres disponibles : \n");
-      printf("3 : Rechercher un livre par son titre : \n");
-      printf("4 : Mettre à jour la quantité d'un livre : \n");
-      printf("5 : Supprimer un livre du stock : \n");
-      printf("6 : Afficher le nombre total de livres en stock : \n");
-
-      printf("entrez votre choix : ");
-      scanf("%d", &nombre);
-      printf("_____________________________________________________________________\n");
-      if (nombre == 1)
-      {
-        ajouter();
-      }
-      else if (nombre == 2)
-      {
-        affichage();
-      }
-      else if (nombre == 3)
-      {
-        rechercher();
-      }
-      else if (nombre == 4)
-      {
-        mettre_a_jour();
-      }
-      else if (nombre == 5)
-      {
-        supprimer();
-      }
-
-    } while (nombre != 7);
-
-    return 0;
+     stock[i] = stock[i+1];
+    }
+    
   }
+  count--;
+
+}
+
+void afficher_total(){
+  printf("_____________________________________________________________________\n");
+  printf(" le nombre total de livres en stock est : %d\n",count);
+  printf("_____________________________________________________________________\n");
+}
+int main()
+{
+  printf("_____________________________________________________________________\n");
+  do
+  {
+    printf("Saiser un nombre : \n");
+    printf(" \n");
+    printf("1 : Ajouter un livre au stock : \n");
+    printf("2 : Afficher tous les livres disponibles : \n");
+    printf("3 : Rechercher un livre par son titre : \n");
+    printf("4 : Mettre à jour la quantité d'un livre : \n");
+    printf("5 : Supprimer un livre du stock : \n");
+    printf("6 : Afficher le nombre total de livres en stock : \n");
+
+    printf("entrez votre choix : ");
+    scanf("%d", &nombre);
+    printf("_____________________________________________________________________\n");
+    if (nombre == 1)
+    {
+      ajouter();
+    }
+    else if (nombre == 2)
+    {
+      affichage();
+    }
+    else if (nombre == 3)
+    {
+      rechercher();
+    }
+    else if (nombre == 4)
+    {
+      mettre_a_jour();
+    }
+    else if (nombre == 5)
+    {
+      supprimer();
+    }else if(nombre ==6){
+      afficher_total();
+    }
+
+  } while (nombre != 7);
+
+  return 0;
+}
