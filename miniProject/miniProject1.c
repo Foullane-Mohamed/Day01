@@ -27,16 +27,14 @@ void ajouter()
 }
 void affichage()
 {
-  
-  
-    printf("_____________________________________________________________________\n");
-    for (int i = 0; i < count; i++)
-    {
 
-      printf(" livre nombre %d  : | titre : %s | auteur : %s  | prix : %d | quantite : %d | \n", i + 1, stock[i].titre, stock[i].auteur, stock[i].prix, stock[i].quantite);
-      printf("_____________________________________________________________________\n");
-    }
-  
+  printf("_____________________________________________________________________\n");
+  for (int i = 0; i < count; i++)
+  {
+
+    printf(" livre nombre %d  : | titre : %s | auteur : %s  | prix : %d | quantite : %d | \n", i + 1, stock[i].titre, stock[i].auteur, stock[i].prix, stock[i].quantite);
+    printf("_____________________________________________________________________\n");
+  }
 }
 
 void rechercher()
@@ -46,45 +44,68 @@ void rechercher()
   scanf("%s", new_titre);
   for (int i = 0; i < count; i++)
   {
-    if (strcmp(stock[i].titre, new_titre)==0)
+    if (strcmp(stock[i].titre, new_titre) == 0)
     {
-        printf("_____________________________________________________________________\n");
+      printf("_____________________________________________________________________\n");
       printf(" livre nombre %d  : | titre : %s | auteur : %s  | prix : %d | quantite : %d | \n", i + 1, stock[i].titre, stock[i].auteur, stock[i].prix, stock[i].quantite);
-        printf("_____________________________________________________________________\n");
+      printf("_____________________________________________________________________\n");
     }
   }
-
 }
-int main()
+void mettre_a_jour()
 {
-  printf("_____________________________________________________________________\n");
-  do
+  char new_titre[100];
+  printf("Siser un titre de livre pour editer :");
+  scanf("%s", new_titre);
+  for (int i = 0; i < count; i++)
   {
-    printf("Saiser un nombre : \n");
-    printf(" \n");
-    printf("1 : Ajouter un livre au stock : \n");
-    printf("2 : Afficher tous les livres disponibles : \n");
-    printf("3 : Rechercher un livre par son titre : \n");
-    printf("4 : Mettre à jour la quantité d'un livre : \n");
-    printf("5 : Supprimer un livre du stock : \n");
-    printf("6 : Afficher le nombre total de livres en stock : \n");
-
-    printf("entrez votre choix : ");
-    scanf("%d", &nombre);
+    if (strcmp(stock[i].titre, new_titre) == 0)
+    {
+      printf("Saiser le titre de livre : ");
+      scanf("%s", stock[i].titre);
+      printf("Saiser le auteur de livre : ");
+      scanf("%s", stock[i].auteur);
+      printf("Saiser le prix de livre : ");
+      scanf("%d", &stock[i].prix);
+      printf("Saiser le quantite de livre : ");
+      scanf("%d", &stock[i].quantite);
+    }
+  }
+  int main()
+  {
     printf("_____________________________________________________________________\n");
-    if (nombre == 1)
+    do
     {
-      ajouter();
-    }
-    else if (nombre == 2)
-    {
-      affichage();
-    }
-    else if (nombre == 3)
-    {
-      rechercher();
-    }
-  } while (nombre != 7);
+      printf("Saiser un nombre : \n");
+      printf(" \n");
+      printf("1 : Ajouter un livre au stock : \n");
+      printf("2 : Afficher tous les livres disponibles : \n");
+      printf("3 : Rechercher un livre par son titre : \n");
+      printf("4 : Mettre à jour la quantité d'un livre : \n");
+      printf("5 : Supprimer un livre du stock : \n");
+      printf("6 : Afficher le nombre total de livres en stock : \n");
 
-  return 0;
-}
+      printf("entrez votre choix : ");
+      scanf("%d", &nombre);
+      printf("_____________________________________________________________________\n");
+      if (nombre == 1)
+      {
+        ajouter();
+      }
+      else if (nombre == 2)
+      {
+        affichage();
+      }
+      else if (nombre == 3)
+      {
+        rechercher();
+      }
+      else if (nombre == 4)
+      {
+        mettre_a_jour();
+      }
+
+    } while (nombre != 7);
+
+    return 0;
+  }
