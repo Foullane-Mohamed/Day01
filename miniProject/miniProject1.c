@@ -71,6 +71,7 @@ void mettre_a_jour()
       scanf("%d", &stock[i].quantite);
     }
   }
+  }
   int main()
   {
     printf("_____________________________________________________________________\n");
@@ -103,6 +104,10 @@ void mettre_a_jour()
       else if (nombre == 4)
       {
         mettre_a_jour();
+      }
+      else if (nombre == 5)
+      {
+        supprimer();
       }
 
     } while (nombre != 7);
