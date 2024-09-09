@@ -2,6 +2,7 @@
 // Écrivez un programme C qui définit une structure pour représenter un étudiant
 //  avec les champs nom, prenom, et un tableau d'entiers pour stocker les notes.
 //   Assignez des valeurs aux champs et aux notes, puis affichez les informations de l'étudiant.
+#include <stdio.h>
 int size_note;
 typedef struct
 {
@@ -18,7 +19,7 @@ int main()
     printf("saisir le prenom:");
     scanf("%s", &person.prenom);
     printf("Siser combien de note vous entre : ");
-    scanf("%s", &size_note);
+    scanf("%d", &size_note);
     for (int i = 0; i < size_note; i++)
     {
         printf("Siser le note nombre %s", i + 1);
@@ -29,6 +30,7 @@ int main()
     for (int i = 0; i < size_note; i++)
     {
         printf("les notes est : %d\n", person.note[i]);
+        
     }
 
     return 0;
