@@ -12,6 +12,7 @@ carnet contact[100];
 void ajouter();
 void modifier();
 void affichage();
+void supprimer();
 void rechercher();
 
 int main()
@@ -25,7 +26,7 @@ int main()
         printf("2 : Modifier un Contact: \n");
         printf("3 : Supprimer un Contact : \n");
         printf("4 : Afficher Tous les Contacts : \n");
-        printf("6 : Rechercher un Contact : \n");
+        printf("5 : Rechercher un Contact : \n");
 
         printf("entrez votre choix : ");
         scanf("%d", &choix);
@@ -37,6 +38,9 @@ int main()
             break;
         case 2:
             modifier();
+            break;
+        case 3:
+            supprimer();
             break;
         case 4:
             affichage();
@@ -58,10 +62,10 @@ void print_liste(int i)
 }
 char damande_print(char new_nom[100])
 {
-    char new_nom[100];
+
     printf("Siser un titre de livre :");
     scanf("%s", new_nom);
-    return new_nom;
+    return new_nom[20];
 }
 void print_ajouter(int x)
 {
@@ -88,6 +92,31 @@ void affichage()
     printf("_____________________________________________________________________\n");
 }
 
+void modifier()
+{
+    char new_nom[100];
+    damande_print(new_nom);
+    for (int i = 0; i < count; i++)
+    {
+        if (strcmp(contact[i].nom, new_nom) == 0)
+        {
+            print_ajouter(i);
+        }
+    }
+}
+void supprimer()
+{
+    char new_nom[100];
+    damande_print(new_nom);
+    for (int i = 0; i < count; i++)
+    {
+        if (strcmp(contact[i].nom, new_nom) == 0)
+        {
+            contact[i] = contact[i + 1];
+        }
+    }
+    count--;
+}
 void rechercher()
 {
     char new_nom[100];
@@ -99,19 +128,6 @@ void rechercher()
             printf("_____________________________________________________________________\n");
             print_liste(i);
             printf("_____________________________________________________________________\n");
-        }
-    }
-}
-
-void modifier()
-{
-    char new_nom[100];
-    damande_print(new_nom);
-    for (int i = 0; i < count; i++)
-    {
-        if (strcmp(contact[i].nom, new_nom) == 0)
-        {
-           print_ajouter(i);
         }
     }
 }
