@@ -1,6 +1,6 @@
 // Challenge 7 : Conversion en Majuscules
 // Écrivez un programme C qui lit une chaîne de caractères 
-// et convertit tous les caractères en majuscules. Affichez la chaîne modifiée.
+// et convertit tous les caractères en majusc00ules. Affichez la chaîne modifiée.
 
 #include <stdio.h>
 #include <string.h>
