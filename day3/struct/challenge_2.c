@@ -3,7 +3,7 @@
 //  avec les champs nom, prenom, et un tableau d'entiers pour stocker les notes.
 //   Assignez des valeurs aux champs et aux notes, puis affichez les informations de l'étudiant.
 #include <stdio.h>
-int size_note;
+
 typedef struct
 {
     char nom[100];
@@ -13,7 +13,7 @@ typedef struct
 persons person;
 int main()
 {
-
+int size_note;
     printf("saisir le nom:");
     scanf("%s", &person.nom);
     printf("saisir le prenom:");
